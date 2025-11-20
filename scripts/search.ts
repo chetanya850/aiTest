@@ -35,17 +35,12 @@ const searchWeather = async (embedding: string) => {
 const run = async () => {
   const query = process.argv.slice(2).join(' ')
 
-  if (!query) {
-    console.log('Usage: bunx tsx scripts/search.ts "sunny weather"')
-    return
-  }
+  if (!query) return
 
-  console.log('Generating embedding for:', query)
   const embedding = await generateQueryEmbedding(query)
 
   const results = await searchWeather(embedding)
 
-  console.log('\nTop Results:')
   console.table(results)
 }
 

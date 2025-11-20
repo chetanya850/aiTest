@@ -37,7 +37,6 @@ const generateEmbeddings = async (texts: string[]) => {
 
   for (let i = 0; i < texts.length; i += BATCH_SIZE) {
     const batch = texts.slice(i, i + BATCH_SIZE)
-    console.log(`Requesting embeddings for batch ${i}..${i + batch.length - 1}`)
 
     const res = await embedMany({
       model: EMBEDDING_MODEL,
@@ -80,8 +79,7 @@ const insertWeatherData = async (items: any[], embeddings: number[][]) => {
         embeddingLiteral
       ]
 
-      const result = await client.query(insertSql, values)
-      console.log(`Inserted id=${result.rows[0].id} city=${item.city}`)
+      await client.query(insertSql, values)
     }
 
     await client.query('COMMIT')
