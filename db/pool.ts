@@ -8,5 +8,3 @@ export const pool = new Pool({
   password: process.env.PGPASSWORD,
   port: Number(process.env.PGPORT ?? 5432)
 })
-
-export const query = (text: string, params?: any[]) => pool.query(text, params)
