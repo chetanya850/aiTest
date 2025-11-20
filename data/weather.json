@@ -1,0 +1,66 @@
+[
+  {
+    "city": "New York",
+    "country": "USA",
+    "temperature_c": 12,
+    "humidity_pct": 68,
+    "wind_kph": 14,
+    "conditions": "Partly Cloudy"
+  },
+  {
+    "city": "Los Angeles",
+    "country": "USA",
+    "temperature_c": 21,
+    "humidity_pct": 55,
+    "wind_kph": 8,
+    "conditions": "Sunny"
+  },
+  {
+    "city": "London",
+    "country": "UK",
+    "temperature_c": 9,
+    "humidity_pct": 72,
+    "wind_kph": 10,
+    "conditions": "Light Rain"
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "temperature_c": 17,
+    "humidity_pct": 61,
+    "wind_kph": 12,
+    "conditions": "Cloudy"
+  },
+  {
+    "city": "Sydney",
+    "country": "Australia",
+    "temperature_c": 24,
+    "humidity_pct": 49,
+    "wind_kph": 20,
+    "conditions": "Windy"
+  },
+  {
+    "city": "Toronto",
+    "country": "Canada",
+    "temperature_c": 5,
+    "humidity_pct": 75,
+    "wind_kph": 16,
+    "conditions": "Overcast"
+  },
+  {
+    "city": "Dubai",
+    "country": "UAE",
+    "temperature_c": 32,
+    "humidity_pct": 30,
+    "wind_kph": 18,
+    "conditions": "Hot and Clear"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "temperature_c": 11,
+    "humidity_pct": 70,
+    "wind_kph": 9,
+    "conditions": "Foggy"
+  }
+]

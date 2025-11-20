@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Semantic Search</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 14px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .result {
+        border: 1px solid #ddd;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Weather Vector Search</h2>
+
+    <input id="query" placeholder="Try: sunny warm weather" />
+    <button onclick="runSearch()">Search</button>
+
+    <div id="results"></div>
+
+    <script>
+      async function runSearch() {
+        const q = document.getElementById('query').value
+        if (!q.trim()) return
+
+        const res = await fetch('/search?query=' + encodeURIComponent(q))
+        const data = await res.json()
+
+        document.getElementById('results').innerHTML = data
+          .map(
+            item => `
+          <div class="result">
+            <strong>${item.city}</strong>, ${item.country}<br>
+            <em>${item.conditions}</em><br>
+            <small>Distance: ${item.distance.toFixed(4)}</small>
+          </div>`
+          )
+          .join('')
+      }
+    </script>
+  </body>
+</html>
